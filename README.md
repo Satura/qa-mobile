@@ -2,10 +2,10 @@
 
 ### Домашнее задание #1
 
-
-
 <details>
   <summary>Написать тест-кейсы для тестирования функциональности приложения</summary>
+
+---
 
 Приложение: _Stepik_
 
@@ -25,3 +25,58 @@
 
 </details>
 
+
+### Домашнее задание #2
+
+<details>
+<summary>
+Составить таблицу с устройствами для тестирования вашего выбранного приложения. Выбрать 2-3 тест-кейса, которые мы писали ранее, провести на них тестирование на выбранных устройствах.</summary>
+
+---
+ 
+  ЦА русскоязычные жители стран СНГ, главным образом Россия.
+
+#### Производители
+
+Распределение по [производителям телефонов](https://gs.statcounter.com/vendor-market-share/mobile/russian-federation):
+
+* Apple - 29.51%
+* Xiaomi - 23.2%
+* Samsung - 17.91%
+
+Распределение по [производителям планшетов](https://gs.statcounter.com/vendor-market-share/tablet/russian-federation)
+
+* Apple - 37.96%
+* Samsung - 33.2%
+* Xiaomi - 10.07%
+* Huawei - 10.03%
+
+#### Версии ОС 
+
+[iOS](https://developer.apple.com/support/app-store/)
+
+- телефоны:
+  * iOS 17 - 76% 
+  * iOS 16 - 20%
+
+- планшеты: 
+  * iOS 17 - 61% 
+  * iOS 16 - 29%
+
+[android](https://www.appbrain.com/stats/top-android-sdk-versions)
+* Android 13	24.5%	 
+* Android 11	20.1%	
+* Android 12 16.8%	
+* Android 10	12.5%
+
+[Популярные в России устройства:](https://www.appbrain.com/stats/top-android-phones-tablets-by-country?country=ru)
+* Redmi 9C NFC
+* Huawei HONOR 10i
+* Huawei HONOR 9X lite	
+* Samsung Galaxy A12
+* Samsung Galaxy A51
+
+В перечень устройств для тестирования включены устройства из перечня популярных, различные  устройства лидирующих производителей охватывающие разные версии ОС, размеры и разрешения экрана и годы выпуска. 
+
+Результаты в [таблице]()
+</details>
