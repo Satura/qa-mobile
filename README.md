@@ -78,5 +78,5 @@
 
 В перечень устройств для тестирования включены устройства из перечня популярных, различные  устройства лидирующих производителей охватывающие разные версии ОС, размеры и разрешения экрана и годы выпуска. 
 
-Результаты в [таблице](https://github.com/Satura/qa-mobile/blob/84c09c9aa7987ea07da101ef8877eee5656c173c/docs/HW-2.xlsx)
+Результаты в [таблице](https://docs.google.com/spreadsheets/d/14XCxbBB1T41FU4HJPQQrFOgd2F5Td_aU/edit?usp=sharing&ouid=102514362893231578101&rtpof=true&sd=true)
 </details>
