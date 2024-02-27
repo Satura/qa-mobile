@@ -96,4 +96,6 @@
 | 3 | средний | Получение в результате поиска ответа 404 Not Found | Открыт раздел "Каталог", в поле поиска введено значение (пр. "java") | 1. Установить правила breakpoints - after requests. <br>2. В запросе "/api/search-results?page=1&query=java..." установить ответ 404 Not Found<br>3. Запустить выполнение запроса | На странице раздела отображаются шаблоны карточек курсов без данных. | На странице раздела отображается сообщение «Sorry, the connection is not available. Try again later». |
 | 4 | средний | Получение 503 Service Unavailable при переходе к уроку курса | Открыта вкладка "Модули" проходимого курса | 1. Установить правила breakpoints - after requests. <br>2. Открыть доступный урок курса.<br>3. В запросе "/api/progresses?..." установить ответ 503 Service Unavailable <br>3. Запустить выполнение запроса | На странице урока отображается сообщение с кодом и текстом ошибки | На странице урока отображается сообщение «Sorry, the connection is not available. Try again later». |
 
+[Fiddler-sessions](https://github.com/Satura/qa-mobile/blob/main/docs/HW-3.saz)
+
 </details>
