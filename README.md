@@ -99,3 +99,14 @@
 [Fiddler-sessions](https://github.com/Satura/qa-mobile/blob/main/docs/HW-3.saz)
 
 </details>
+
+### Домашнее задание #4
+
+<details>
+<summary>Автоматизировать на эмуляторе 5 тест кейсов используя Appium и UIAutomator2 драйвер</summary>
+
+---
+
+_Пока автоматизирована регистрация и реализованы авторизация, переход в раздел каталог и выход из учетной записи._
+
+</details>
