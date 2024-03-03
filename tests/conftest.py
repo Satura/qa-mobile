@@ -4,6 +4,7 @@ from appium.options.android import UiAutomator2Options
 
 from utils.appium_utils import initialize_appium_driver
 
+
 @pytest.fixture()
 def driver():
     host = "http://localhost:4723/wd/hub"
@@ -13,4 +14,4 @@ def driver():
 
     yield driver
 
-    # driver.quit()
+    driver.quit()

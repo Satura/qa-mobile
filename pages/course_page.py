@@ -51,7 +51,6 @@ class CoursePage(BasePage):
         error = self.driver.find_element(By.ID, self.error_notification)
         return error.text == self.error_text
 
-
     # def wifi_off(self):
     #     wifi_switch = self.driver.find_element(By.ID, "com.android.settings:id/wifi_settings").find_element(By.ID,
     #                                                                                                         "com.android.settings:id/switchWidget")

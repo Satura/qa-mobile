@@ -45,9 +45,7 @@ class CatalogPage(BasePage):
         field.send_keys(self.search_req)
         self.driver.find_element(By.XPATH, self.filter_btn).click()
         self.driver.find_element(By.XPATH, self.result_btn).click()
-        # time.sleep(15)
         self.driver.implicitly_wait(20)
-        # self.driver.find_elements(By.XPATH, self.course_cards)
 
         # self.driver.find_element(By.XPATH, self.search_field).send_keys(Keys.ENTER)
         # self.driver.press_keycode(66)

@@ -22,7 +22,7 @@ def init_pages(driver):
     catalog = CatalogPage(driver)
     home = HomePage(driver)
 
-
+@pytest.mark.run(order=1)
 def test_reg(driver):
     onboarding.close_onboarding()
     login_p.registry_new_user("Вилланель", "testmail@mail.com", "testpass")
