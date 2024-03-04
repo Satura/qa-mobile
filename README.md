@@ -114,6 +114,7 @@
 4. Работа фильтрации бесплатных курсов 
 5. Попытка загрузки материалов курса на мобильном интернете
 
-[Результаты выполнения тестов](https://github.com/Satura/qa-mobile/blob/main/docs/test_results.png)
+![Результаты выполнения тестов](https://github.com/Satura/qa-mobile/blob/main/docs/test_results.png)
+
 
 </details>
