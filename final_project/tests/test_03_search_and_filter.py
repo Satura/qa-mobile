@@ -26,7 +26,7 @@ def init_pages(driver):
 @pytest.mark.run(order=3)
 def test_search(driver):
     onboarding.close_onboarding()
-    login_p.login_with_email("testmail@mail.com", "testpass")
+    login_p.login_with_email("testmail@mail.org", "testpass")
     home.ok_message()
     home.cancel_notif()
     bottom_panel.go_to_catalog()

@@ -1,10 +1,4 @@
-import time
-
-from appium.webdriver.extensions.android.nativekey import AndroidKey
-from appium.webdriver.extensions.keyboard import Keyboard
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from appium.webdriver.extensions.android.network import Network
 
 from pages.base_page import BasePage
@@ -42,6 +36,7 @@ class CoursePage(BasePage):
         self.driver.find_element(By.XPATH, self.fav_btn).click()
 
     def download_with_mobile(self):
+        self.wifi_off_mobile_on()
         self.driver.find_element(By.XPATH, self.modules).click()
         self.driver.find_element(By.XPATH, self.download_module_btn).click()
         self.driver.find_element(By.XPATH, self.download_settings_high_quality).click()
@@ -51,16 +46,21 @@ class CoursePage(BasePage):
         error = self.driver.find_element(By.ID, self.error_notification)
         return error.text == self.error_text
 
-    # def wifi_off(self):
-    #     wifi_switch = self.driver.find_element(By.ID, "com.android.settings:id/wifi_settings").find_element(By.ID,
-    #                                                                                                         "com.android.settings:id/switchWidget")
-    #     wifi_state = wifi_switch.get_attribute("checked")
-    #     if wifi_state:
-    #         wifi_switch.click()
-    #
-    # def wifi_on(self):
-    #     wifi_switch = self.driver.find_element(By.ID, "com.android.settings:id/wifi_settings").find_element(By.ID,
-    #                                                                                                         "com.android.settings:id/switchWidget")
-    #     wifi_state = wifi_switch.get_attribute("checked")
-    #     if wifi_state == False:
-    #         wifi_switch.click()
+    def wifi_off_mobile_on(self):
+        Network.set_network_connection(self, 4)
+        # wifi_switch = self.driver.find_element(By.ID, "com.android.settings:id/wifi_settings").find_element(By.ID,
+        #                                                                                                     "com.android.settings:id/switchWidget")
+        # wifi_state = wifi_switch.get_attribute("checked")
+        # if wifi_state:
+        #     wifi_switch.click()
+
+    def wifi_on_mobile_on(self):
+        Network.set_network_connection(self, 6)
+        # wifi_switch = self.driver.find_element(By.ID, "com.android.settings:id/wifi_settings").find_element(By.ID,
+        #                                                                                                     "com.android.settings:id/switchWidget")
+        # wifi_state = wifi_switch.get_attribute("checked")
+        # if wifi_state == False:
+        #     wifi_switch.click()
+
+    def airplane_on(self):
+        Network.set_network_connection(1)

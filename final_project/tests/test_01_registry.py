@@ -25,6 +25,6 @@ def init_pages(driver):
 @pytest.mark.run(order=1)
 def test_reg(driver):
     onboarding.close_onboarding()
-    login_p.registry_new_user("Вилланель", "testmail@mail.com", "testpass")
+    login_p.registry_new_user("Вилланель", "testmail@mail.org", "testpass")
     driver.implicitly_wait(15)
     home.is_greetings()
