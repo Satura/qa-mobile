@@ -1,7 +1,10 @@
+import time
+
+import timer
 from selenium.webdriver.common.by import By
 from appium.webdriver.extensions.android.network import Network
 
-from pages.base_page import BasePage
+from final_project.pages.base_page import BasePage
 
 
 class CoursePage(BasePage):
@@ -31,12 +34,13 @@ class CoursePage(BasePage):
 
     def join_course(self):
         self.driver.find_element(By.XPATH, self.join_btn).click()
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, self.navigate_up_btn).click()
 
     def add_to_fav(self):
         self.driver.find_element(By.XPATH, self.fav_btn).click()
 
     def download_with_mobile(self):
-        self.wifi_off_mobile_on()
         self.driver.find_element(By.XPATH, self.modules).click()
         self.driver.find_element(By.XPATH, self.download_module_btn).click()
         self.driver.find_element(By.XPATH, self.download_settings_high_quality).click()

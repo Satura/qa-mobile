@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from pages.base_page import BasePage
+from final_project.pages.base_page import BasePage
 
 
 class CatalogPage(BasePage):
@@ -76,10 +76,3 @@ class CatalogPage(BasePage):
                 result = False
         return result
 
-    def is_filter_certificate_work(self):
-        cards = self.driver.find_elements(By.XPATH, self.course_name)
-        certificates = self.driver.find_elements(By.XPATH, self.card_cert)
-        result = True
-        if len(cards) != len(certificates):
-            result = False
-        return result

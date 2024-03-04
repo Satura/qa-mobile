@@ -1,12 +1,12 @@
 import pytest
 from selenium.webdriver.common.by import By
 
-from pages.onboarding_page import OnboardingPage
-from pages.login_page import LoginPage
-from pages.bottom_panel import BottomPanel
-from pages.catalog_page import CatalogPage
-from pages.home_page import HomePage
-from pages.course_page import CoursePage
+from final_project.pages.onboarding_page import OnboardingPage
+from final_project.pages.login_page import LoginPage
+from final_project.pages.bottom_panel import BottomPanel
+from final_project.pages.catalog_page import CatalogPage
+from final_project.pages.home_page import HomePage
+from final_project.pages.course_page import CoursePage
 
 onboarding: OnboardingPage
 login_p: LoginPage
@@ -25,7 +25,7 @@ def init_pages(driver):
     home = HomePage(driver)
     course = CoursePage(driver)
 
-@pytest.mark.run(order=6)
+@pytest.mark.run(order=5)
 def test_not_download_with_mobile(driver):
 
     onboarding.close_onboarding()
@@ -38,8 +38,6 @@ def test_not_download_with_mobile(driver):
     catalog.search_course('Эффективная презентация проекта')
     driver.find_element(By.XPATH, '//androidx.recyclerview.widget.RecyclerView[@resource-id="org.stepic.droid:id/courseListCoursesRecycler"]/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.view.View').click()
     course.join_course()
-    driver.implicitly_wait(10)
-    driver.find_element(By.XPATH, course.navigate_up_btn).click()
-
+    # course.wifi_off_mobile_on()
     course.download_with_mobile()
     assert course.is_error_mobile()

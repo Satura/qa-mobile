@@ -1,6 +1,3 @@
-from appium import webdriver
-
-
 def get_capabilities():
     return {
         "platformName": "Android",
