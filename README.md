@@ -103,7 +103,7 @@
 ### Домашнее задание #4 - Финальный проект
 
 <details>
-<summary>Автоматизировать на эмуляторе 5 тест кейсов используя Appium и UIAutomator2 драйвер</summary>
+<summary>Автоматизировать на эмуляторе 5 тест-кейсов используя Appium и UIAutomator2 драйвер</summary>
 
 ---
 
@@ -115,6 +115,6 @@
 5. Попытка загрузки материалов курса на мобильном интернете
 
 ![Результаты выполнения тестов](https://github.com/Satura/qa-mobile/blob/main/docs/test_results.png)
-
+[Видео прохождения тестов](https://disk.yandex.com/i/4Ia76mfCruCtFw)
 
 </details>
