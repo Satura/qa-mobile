@@ -59,5 +59,3 @@ class CoursePage(BasePage):
     def airplane_on(self):
         self.driver.set_network_connection(ConnectionType.AIRPLANE_MODE)
 
-    def wifi_off_mobile_on_2(self):
-        self.driver.open_notification()
