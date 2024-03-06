@@ -31,6 +31,7 @@ class CatalogPage(BasePage):
         self.card_price = '//android.widget.TextView[@resource-id="org.stepic.droid:id/coursePrice"]'
         self.card_cert = '//android.widget.TextView[@resource-id="org.stepic.droid:id/courseCertificateText"]'
         self.back_btn = '//android.widget.ImageView[@resource-id="org.stepic.droid:id/backIcon"]'
+        self.first_course = '//androidx.recyclerview.widget.RecyclerView[@resource-id="org.stepic.droid:id/courseListCoursesRecycler"]/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.view.View'
 
     def search_course(self, request):
         self.search_req = request
@@ -43,7 +44,18 @@ class CatalogPage(BasePage):
 
         # self.driver.find_element(By.XPATH, self.search_field).send_keys(Keys.ENTER)
         # self.driver.press_keycode(66)
+        # self.driver.keyevent('66')
         # ActionChains(self.driver).send_keys(Keys.INSERT)
+
+    def search_and_goto_first_course(self, request):
+        self.search_req = request
+        field = self.driver.find_element(By.XPATH, self.search_field)
+        self.driver.find_element(By.XPATH, self.ru_btn).click()
+        field.send_keys(self.search_req)
+        self.driver.find_element(By.XPATH, self.filter_btn).click()
+        self.driver.find_element(By.XPATH, self.result_btn).click()
+        self.driver.implicitly_wait(20)
+        self.driver.find_element(By.XPATH, self.first_course).click()
 
     def set_filter_free_with_cert(self):
         self.driver.find_element(By.XPATH, self.filter_btn).click()
@@ -76,3 +88,20 @@ class CatalogPage(BasePage):
                 result = False
         return result
 
+    def is_filter_certificate_work(self):
+        cards = self.driver.find_elements(By.XPATH, self.course_name)
+        certificates = self.driver.find_elements(By.XPATH, self.card_cert)
+        result = True
+        print('\ncards: ', len(cards))
+        print('\ncert: ', len(certificates))
+        if len(cards) != len(certificates):
+            result = False
+        return result
+
+    def search_free_cert_course(self, request):
+        self.search_req = request
+        field = self.driver.find_element(By.XPATH, self.search_field)
+        self.driver.find_element(By.XPATH, self.ru_btn).click()
+        field.send_keys(self.search_req)
+        self.set_filter_free_with_cert()
+        self.driver.implicitly_wait(20)

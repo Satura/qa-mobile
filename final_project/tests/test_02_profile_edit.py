@@ -40,5 +40,5 @@ def test_profile_edit(driver):
     bottom_panel.go_to_profile()
     profile.edit_profile_main("Ольга", "Анварова")
     assert profile.is_profile_changed()
-    driver.find_element(By.XPATH, profile.close_edit_profile_btn).click()
+    profile.close_profile_editor()
 

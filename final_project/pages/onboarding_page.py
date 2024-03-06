@@ -11,4 +11,3 @@ class OnboardingPage(BasePage):
 
     def close_onboarding(self):
         self.driver.find_element(By.XPATH, self.close_btn).click()
-

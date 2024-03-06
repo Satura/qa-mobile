@@ -22,6 +22,7 @@ def init_pages(driver):
     catalog = CatalogPage(driver)
     home = HomePage(driver)
 
+
 @pytest.mark.run(order=1)
 def test_reg(driver):
     onboarding.close_onboarding()

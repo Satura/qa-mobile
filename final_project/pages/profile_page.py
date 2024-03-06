@@ -59,3 +59,5 @@ class ProfilePage(BasePage):
     def is_profile_changed(self):
         return self.driver.find_element(By.XPATH, self.message_window).text == self.message_text
 
+    def close_profile_editor(self):
+        self.driver.find_element(By.XPATH, self.close_edit_profile_btn).click()

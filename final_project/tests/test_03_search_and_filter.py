@@ -48,3 +48,12 @@ def test_price_filter(driver):
     catalog.set_filter_free_with_cert()
     assert catalog.is_filter_price_work()
 
+
+@pytest.mark.run(order=5)
+def test_certificate_filter(driver):
+    onboarding.close_onboarding()
+    login_p.close_login_page()
+    bottom_panel.go_to_catalog()
+    catalog.search_free_cert_course('каллиграф')
+    driver.implicitly_wait(10)
+    assert catalog.is_filter_certificate_work()

@@ -23,5 +23,3 @@ class BottomPanel(BasePage):
 
     def go_to_notification(self):
         self.driver.find_element(By.XPATH, self.notification).click()
-
-

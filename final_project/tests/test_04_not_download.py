@@ -15,6 +15,7 @@ catalog: CatalogPage
 home: HomePage
 course: CoursePage
 
+
 @pytest.fixture(autouse=True)
 def init_pages(driver):
     global onboarding, login_p, bottom_panel, catalog, home, course
@@ -25,9 +26,9 @@ def init_pages(driver):
     home = HomePage(driver)
     course = CoursePage(driver)
 
+
 @pytest.mark.run(order=5)
 def test_not_download_with_mobile(driver):
-
     onboarding.close_onboarding()
     login_p.login_with_email("testmail@mail.org", "testpass")
     home.ok_message()
@@ -35,9 +36,8 @@ def test_not_download_with_mobile(driver):
 
     bottom_panel.go_to_catalog()
     driver.implicitly_wait(10)
-    catalog.search_course('Эффективная презентация проекта')
-    driver.find_element(By.XPATH, '//androidx.recyclerview.widget.RecyclerView[@resource-id="org.stepic.droid:id/courseListCoursesRecycler"]/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.view.View').click()
+    catalog.search_and_goto_first_course('Эффективная презентация проекта')
     course.join_course()
-    # course.wifi_off_mobile_on()
+    course.wifi_off_mobile_on()
     course.download_with_mobile()
     assert course.is_error_mobile()

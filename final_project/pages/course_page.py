@@ -2,7 +2,7 @@ import time
 
 import timer
 from selenium.webdriver.common.by import By
-from appium.webdriver.extensions.android.network import Network
+from appium.webdriver.connectiontype import ConnectionType
 
 from final_project.pages.base_page import BasePage
 
@@ -51,20 +51,13 @@ class CoursePage(BasePage):
         return error.text == self.error_text
 
     def wifi_off_mobile_on(self):
-        Network.set_network_connection(self, 4)
-        # wifi_switch = self.driver.find_element(By.ID, "com.android.settings:id/wifi_settings").find_element(By.ID,
-        #                                                                                                     "com.android.settings:id/switchWidget")
-        # wifi_state = wifi_switch.get_attribute("checked")
-        # if wifi_state:
-        #     wifi_switch.click()
+        self.driver.set_network_connection(ConnectionType.DATA_ONLY)
 
     def wifi_on_mobile_on(self):
-        Network.set_network_connection(self, 6)
-        # wifi_switch = self.driver.find_element(By.ID, "com.android.settings:id/wifi_settings").find_element(By.ID,
-        #                                                                                                     "com.android.settings:id/switchWidget")
-        # wifi_state = wifi_switch.get_attribute("checked")
-        # if wifi_state == False:
-        #     wifi_switch.click()
+        self.driver.set_network_connection(ConnectionType.ALL_NETWORK_ON)
 
     def airplane_on(self):
-        Network.set_network_connection(1)
+        self.driver.set_network_connection(ConnectionType.AIRPLANE_MODE)
+
+    def wifi_off_mobile_on_2(self):
+        self.driver.open_notification()
