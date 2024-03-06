@@ -92,8 +92,8 @@ class CatalogPage(BasePage):
         cards = self.driver.find_elements(By.XPATH, self.course_name)
         certificates = self.driver.find_elements(By.XPATH, self.card_cert)
         result = True
-        print('\ncards: ', len(cards))
-        print('\ncert: ', len(certificates))
+        # print('\ncards: ', len(cards))
+        # print('\ncert: ', len(certificates))
         if len(cards) != len(certificates):
             result = False
         return result
