@@ -116,6 +116,6 @@
 5. Попытка загрузки материалов курса на мобильном интернете
 
 ![Результаты выполнения тестов](https://github.com/Satura/qa-mobile/blob/main/docs/test_results.png)
-[Видео прохождения тестов](https://disk.yandex.com/i/4Ia76mfCruCtFw)
+[Видео прохождения тестов](https://disk.yandex.com/i/lB8xVZ2MT-lvgQ)
 
 </details>
